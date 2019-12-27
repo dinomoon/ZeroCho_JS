@@ -35,3 +35,4 @@
 23. 1~45의 숫자가 들어가있는 배열만들기? var list = Array(45).fill().map(function(e, i){ return i+1 });
 24. 정렬하는 방법? var winNS = shuffleList.slice(0, 6).sort(function(p, c){return p-c}); <-내림차순 (p-c> 0 이면 자리를 바꾼다.)
 25. JS에서는 -를 빼기로 인식하기 때문에 변수명으로 지을 수없고, 스타일을 넣을 때도 border-radius가 아니라 borderRadius로 해야함.
+26. JS에서 객체는 딕셔너리 역할을 할 수도 있다.
