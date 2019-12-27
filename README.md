@@ -7,6 +7,8 @@
 
 [04. 틱택토](https://dinomoon.github.io/ZeroCho_JS/04.%20틱택토/index.html)
 
+[05. 로또추첨기](https://dinomoon.github.io/ZeroCho_JS/05.%20로또추첨기/index.html)
+
 ## 알게 된 것
 1. $와 _ 도 변수명으로 사용할 수 있다.
 2. ==와 ===는 다르다. (===를 사용할 것!)
