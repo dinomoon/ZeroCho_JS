@@ -1,4 +1,4 @@
-var result = document.createElement('h1');
+var result = document.createElement('h2');
 result.textContent = "";
 document.body.append(result);
 
@@ -11,6 +11,12 @@ form.append(text);
 var btn = document.createElement('button');
 btn.textContent = "입력";
 form.append(btn);
+
+var op = document.createElement('div'); // 남은 기회
+op.textContent = '';
+document.body.append(op);
+
+var count = 10;
 
 var num = [1,2,3,4,5,6,7,8,9];
 var com = [];
@@ -33,8 +39,20 @@ form.addEventListener("submit", function(e){
             B += 1;
         }
     }
-    if (S == 4)
+    if (S == 4){
         result.textContent = "홈런~!";
-    else
+        result.style.color = "orangered";
+        form.removeChild(btn);
+    }
+    else{
+        count = count - 1;
         result.textContent = S + "S " + B + "B";
+        op.textContent = "남은 기회: " + count;
+        
+        if (count === 0){
+            result.textContent = "정답은 " + com.join('') + "입니다.";
+            form.removeChild(btn);
+        }
+    }
+        
 })
