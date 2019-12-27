@@ -1,5 +1,5 @@
 ## 만든 것들
-[01. 끝말잇기](https://dinomoon.github.io/ZeroCho_JS/01. 끝말잇기/index.html)
+[01. 끝말잇기](https://dinomoon.github.io/ZeroCho_JS/01.%20끝말잇기/index.html)
 
 ## 알게 된 것
 1. $와 _ 도 변수명으로 사용할 수 있다.
