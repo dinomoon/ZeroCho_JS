@@ -36,3 +36,7 @@
 24. 정렬하는 방법? var winNS = shuffleList.slice(0, 6).sort(function(p, c){return p-c}); <-내림차순 (p-c> 0 이면 자리를 바꾼다.)
 25. JS에서는 -를 빼기로 인식하기 때문에 변수명으로 지을 수없고, 스타일을 넣을 때도 border-radius가 아니라 borderRadius로 해야함.
 26. JS에서 객체는 딕셔너리 역할을 할 수도 있다.
+27. Object.entries()를 사용해 객체를 2차원 배열로 바꿀 수 있다.
+28. 배열.find()는 반복문이지만 원하는 것을 찾으면 멈춘다.
+29. 1차원배열에서는 indexOf()를 자주 쓰고, 2차원배열에서는 find()와 findIndex()를 자주 쓴다.
+30. 배열.includes()로 || 관계를 줄여서 쓸 수 있다.
