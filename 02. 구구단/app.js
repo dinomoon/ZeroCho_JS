@@ -1,4 +1,5 @@
-var num1 = Math.ceil(Math.random()*9);
+// 1~9사이의 랜덤한 값을 저장(Math.random() -> 0 ~ 1(0, 1 포함X))
+var num1 = Math.ceil(Math.random()*9); 
 var num2 = Math.ceil(Math.random()*9);
 
 var word = document.createElement('div');
@@ -23,6 +24,7 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
     if(num1*num2 === Number(text.value)){
         result.textContent = "딩동댕";
+        result.style.color = "dodgerblue";
         text.value = '';
         text.focus();
         num1 = Math.ceil(Math.random()*9);
@@ -30,6 +32,7 @@ form.addEventListener("submit", function(event) {
         word.textContent = num1 + " 곱하기 " + num2 + "는?";
     } else {
         result.textContent = "땡";
+        result.style.color = "red";
         text.value = '';
         text.focus();
     }
