@@ -17,3 +17,7 @@
 16. 문자.split(구분자) -> 배열 / 배열.join(구분자) -> 문자
 17. 이벤트리스너는 반복문을 대체 가능하다.
 18. e.target -> 클릭된 요소 / e.target.parentNode -> 클릭된 요소의 부모
+19. forEach문, [1,2,3,4,5].forEach(function(e){ console.log(e) });
+20. [1,2,3,4,5].forEach(function(요소, 인덱스){ console.log(요소, 인덱스) });
+21. empty는 반복문이 안된다. var list = Array(45);(list에는 empty 45개가 들어감) list.forEach(function(e){ console.log(e) }); (X)
+22. var list2 = list.fill()이라고 하면 list2는 list의 empty가 모두 undefined로 바뀌어서 들어감.
