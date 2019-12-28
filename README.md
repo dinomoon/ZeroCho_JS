@@ -43,3 +43,4 @@
 31. 항상 데이터와 화면을 일치시켜야 한다는 생각을 가지고 있어야한다. (리액트, 뷰, 앵귤러를 사용하면 쉽게 일치시킬 수 있다.)
 32. e.target vs e.currentTarget: target은 이벤트가 실제로 발생한 곳, currentTarget은 이벤트 리스너가 붙어있는 곳
 33. 스코프 간의 상하관계를 스코프체인이라고 부른다.
+34. e.currentTarget.textContent = 주변지뢰개수 || '' => 주변지뢰개수가 거짓(false, 0, '', null, undefined, NaN)이면 ''을 대신 써라
