@@ -39,4 +39,4 @@
 27. Object.entries()를 사용해 객체를 2차원 배열로 바꿀 수 있다.
 28. 배열.find()는 반복문이지만 원하는 것을 찾으면 멈춘다.
 29. 1차원배열에서는 indexOf()를 자주 쓰고, 2차원배열에서는 find()와 findIndex()를 자주 쓴다.
-30. 배열.includes()로 || 관계를 줄여서 쓸 수 있다.
+30. 배열.includes()로 || 관계를 줄여서 쓸 수 있다. (scoreRCP[user] - scoreRCP[com(dist)] === 2) || (scoreRCP[user] - scoreRCP[com(dist)] === -1) => [2, -1].includes(scoreRCP[user] - scoreRCP[com(dist)])
