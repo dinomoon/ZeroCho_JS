@@ -40,3 +40,4 @@
 28. 배열.find()는 반복문이지만 원하는 것을 찾으면 멈춘다.
 29. 1차원배열에서는 indexOf()를 자주 쓰고, 2차원배열에서는 find()와 findIndex()를 자주 쓴다.
 30. 배열.includes()로 || 관계를 줄여서 쓸 수 있다. (scoreRCP[user] - scoreRCP[com(dist)] === 2) || (scoreRCP[user] - scoreRCP[com(dist)] === -1) => [2, -1].includes(scoreRCP[user] - scoreRCP[com(dist)])
+31. 항상 데이터와 화면을 일치시켜야 한다는 생각을 가지고 있어야한다. (리액트, 뷰, 앵귤러를 사용하면 쉽게 일치시킬 수 있다.)
