@@ -1,109 +1,98 @@
-var table = document.createElement('table');
-var tr;
-var td;
-var trs = [];
-var tds = [];
-var turn = "X";
-var isEnd = false;
-var count = 0;
+// 1~45 리스트 만들기
+var numList = Array(45).fill().map(function(e, i){
+    return i+1;
+});
+//console.log(numList);
 
+// 섞은 리스트 만들기
+var shuffleList = [];
+while(numList.length > 0){
+    var temp = numList.splice(Math.floor(Math.random() * numList.length), 1);
+    shuffleList.push(temp[0]);
+}
+//console.log(shuffleList);
 
-// 테이블 그리기
-for(var i=0; i<3; i++){
-    tr = document.createElement('tr');
-    trs.push(tr);
-    tds.push([])
-    for(var j=0; j<3; j++){
-        td = document.createElement('td');
-        td.addEventListener("click", where);
-        tds[i].push(td);
-        tr.append(td);
-    }
-    table.append(tr);
+// 뽑기
+var winNS = shuffleList.slice(0, 6).sort(function(p, c){return p-c});
+console.log(winNS);
+
+var bonusN = shuffleList[shuffleList.length-1];
+console.log(bonusN);
+
+// 넣기
+var winning_number = document.querySelector("#winning-number");
+var bonus_number = document.querySelector("#bonus-number");
+
+//setTimeout(function() {
+//    ballDeco(winNS[0], 'w');
+//}, 1000)
+//setTimeout(function() {
+//    ballDeco(winNS[1], 'w');
+//}, 2000)
+//setTimeout(function() {
+//    ballDeco(winNS[2], 'w');
+//}, 3000)
+//setTimeout(function() {
+//    ballDeco(winNS[3], 'w');
+//}, 4000)
+//setTimeout(function() {
+//    ballDeco(winNS[4], 'w');
+//}, 5000)
+//setTimeout(function() {
+//    ballDeco(winNS[5], 'w');
+//}, 6000)
+//setTimeout(function() {
+//    ballDeco(bonusN, 'b');
+//}, 7000)
+
+for(var i=1; i<=7; i++){
+//    function 클로저(j){
+//        setTimeout(function() {
+//            if(j<=6)
+//                ballDeco(winNS[j-1], 'w');
+//            else
+//                ballDeco(bonusN, 'b');
+//        }, 1000 * j);
+//    }
+//    클로저(i);
+    (function 클로저(j){
+        setTimeout(function() {
+            if(j<=6)
+                ballDeco(winNS[j-1], 'w');
+            else
+                ballDeco(bonusN, 'b');
+        }, 1000 * j);
+    })(i);
 }
 
-document.body.append(table);
-
-//console.log(trs, tds);
-
-function where(event){
-//    console.log(event.target);
-//    console.log(event.target.parentNode);
-    var trN = trs.indexOf(event.target.parentNode);
-    var tdN = tds[trN].indexOf(event.target);
-    
-    if(tds[trN][tdN].textContent == '') {
-        tds[trN][tdN].textContent = turn;
-        count += 1;
-        
-        // 가로줄 검사
-        if(tds[trN][0].textContent === turn &&
-          tds[trN][1].textContent === turn &&
-          tds[trN][2].textContent === turn){
-            alert(turn + "승리!");
-            isEnd = true;
-            count = 0;
-            tds.forEach(function(e){
-                e.forEach(function(e2){
-                    e2.textContent = '';
-                })
-            })
-        }
-        
-        // 세로줄 검사
-        if(tds[0][tdN].textContent === turn &&
-          tds[1][tdN].textContent === turn &&
-          tds[2][tdN].textContent === turn) {
-            alert(turn + "승리!");
-            isEnd = true;
-            count = 0;
-            tds.forEach(function(e){
-                e.forEach(function(e2){
-                    e2.textContent = '';
-                })
-            })
-        }
-        // 대각선 검사
-        if(trN === tdN || Math.abs(trN-tdN) === 2){
-            if((tds[0][0].textContent === turn &&
-              tds[1][1].textContent === turn &&
-              tds[2][2].textContent === turn) || 
-              tds[0][2].textContent == turn &&
-              tds[1][1].textContent == turn &&
-              tds[2][0].textContent == turn){
-                alert(turn + "승리!");
-                isEnd = true;
-                count = 0;
-                tds.forEach(function(e){
-                e.forEach(function(e2){
-                    e2.textContent = '';
-                })
-            })
-            }
-        }
-        
-        if(isEnd === false && count === 9){
-            alert("무승부!");
-            isEnd = true;
-            count = 0;
-            tds.forEach(function(e){
-                e.forEach(function(e2){
-                    e2.textContent = '';
-                })
-            })
-        }
-        
-        if(isEnd === false){
-            if (turn === "X")
-                turn = "O";
-            else
-                turn = "X";    
-        } else {
-            isEnd = false;
-        }
-        console.log(count);
-        
+// 꾸미기
+function ballDeco(n, WorB){
+    var ball = document.createElement('div');
+    ball.textContent = n;
+    ball.style.display = 'inline-block';
+    ball.style.width = '50px';
+    ball.style.height = '50px';
+    ball.style.border = '1px solid white';
+    ball.style.borderRadius = '50%';
+    ball.style.textAlign = 'center';
+    ball.style.lineHeight = '50px';
+    ball.style.marginRight = '5px';
+    ball.style.fontWeight = 'bold';
+    ball.style.color = '#333';
+    if(n <= 10) {
+        ball.style.backgroundColor = 'orangered';
+    } else if (n <= 20) {
+        ball.style.backgroundColor = 'orange';
+    } else if (n <= 30) {
+        ball.style.backgroundColor = 'yellow';
+    } else if (n <= 40) {
+        ball.style.backgroundColor = 'dodgerblue';
     } else {
-        console.log("빈칸아닙니다.");
+        ball.style.backgroundColor = 'limegreen';
     }
+    
+    if(WorB === 'w')
+        winning_number.append(ball);
+    else
+        bonus_number.append(ball);
 }
