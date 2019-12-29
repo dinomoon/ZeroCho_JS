@@ -1,10 +1,29 @@
 // 가위바위보 사진 background-position 움직여야할 거리
 var dist = '0';
 
-// 결과 출력 div
+// 결과 출력 div 만들기
 var result = document.createElement('div');
-result.textContent = '';
 document.body.append(result);
+
+// 횟수 출력 div 만들기
+var countWin = document.createElement('div');
+countWin.textContent = '이긴 횟수: ';
+countWin.style.color = 'dodgerblue';
+document.body.append(countWin);
+
+var countLose = document.createElement('div');
+countLose.textContent = '진 횟수: ';
+countLose.style.color = 'orangered';
+document.body.append(countLose);
+
+var countDraw = document.createElement('div');
+countDraw.textContent = '비긴 횟수: ';
+countDraw.style.color = 'black';
+document.body.append(countDraw);
+
+var win = 0;
+var draw = 0;
+var lose = 0;
 
 var RCP = {
     R: '0',
@@ -100,12 +119,21 @@ document.querySelectorAll('.btn').forEach(function(btn) {
         if(scoreDiff === 0){
             result.innerHTML = "<h2>비겼습니다.</h2>"
             result.style.color = 'black';
+            draw++;
+            countDraw.textContent = '비긴 횟수: ' + draw;
+            countDraw.style.color = 'black';
         } else if([2, -1].includes(scoreDiff)){
             result.innerHTML = "<h2>졌습니다.</h2>"
             result.style.color = 'orangered';
+            lose++;
+            countLose.textContent = '진 횟수: ' + lose;
+            countLose.style.color = 'orangered';
         } else {
             result.innerHTML = "<h2>이겼습니다.</h2>"
             result.style.color = 'dodgerblue';
+            win++;
+            countWin.textContent = '이긴 횟수: ' + win;
+            countWin.style.color = 'dodgerblue';
         }
     })
 })
