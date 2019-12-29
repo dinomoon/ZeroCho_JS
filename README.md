@@ -9,6 +9,9 @@
 
 [05. 로또추첨기](https://dinomoon.github.io/ZeroCho_JS/05.%20로또추첨기/index.html)
 
+## 다른 사람이 만든 것들
+[배트맨 vs 슈퍼맨 / Android vs IOS 틱택토](https://exporter-hamster-17117.netlify.com/) 진짜 잘 만든듯...!
+
 ## 강의를 통해 알게 된 것
 1. $와 _ 도 변수명으로 사용할 수 있다.
 2. ==와 ===는 다르다. (===를 사용할 것!)
