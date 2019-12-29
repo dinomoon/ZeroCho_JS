@@ -9,7 +9,7 @@
 
 [05. 로또추첨기](https://dinomoon.github.io/ZeroCho_JS/05.%20로또추첨기/index.html)
 
-## 알게 된 것
+## 강의를 통해 알게 된 것
 1. $와 _ 도 변수명으로 사용할 수 있다.
 2. ==와 ===는 다르다. (===를 사용할 것!)
 3. prompt("답?")로 입력을 받으면 문자열로 받는다. 숫자로 바꾸려면 Number를 사용해야한다. (숫자를 문자열로 바꾸려면 String)
@@ -44,3 +44,7 @@
 32. e.target vs e.currentTarget: target은 이벤트가 실제로 발생한 곳, currentTarget은 이벤트 리스너가 붙어있는 곳
 33. 스코프 간의 상하관계를 스코프체인이라고 부른다.
 34. e.currentTarget.textContent = 주변지뢰개수 || '' => 주변지뢰개수가 거짓(false, 0, '', null, undefined, NaN)이면 ''을 대신 써라(분기문을 하나 줄일 수 있다.)
+
+
+## 개인 공부하며 알게 된 것
+1. 브라켓에서 자바스크립트를 작성할 때 이상하게 왼쪽에 계속 X표시가 뜨면서 (작동은 잘 되지만..)document is not undefined라고 하길래 거슬려서 검색해봤는데 맨 위에 /*eslint-env browser*/를 추가해주면 된다고 해서 해보니까 되었다. (이유는 모르겠다..)
