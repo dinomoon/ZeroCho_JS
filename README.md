@@ -9,6 +9,8 @@
 
 [05. 로또추첨기](https://dinomoon.github.io/ZeroCho_JS/05.%20로또추첨기/index.html)
 
+[06. 가위바위보](https://dinomoon.github.io/ZeroCho_JS/06.%20가위바위보/index.html)
+
 ## 다른 사람이 만든 것들
 [배트맨 vs 슈퍼맨 / Android vs IOS 틱택토](https://exporter-hamster-17117.netlify.com/) 진짜 잘 만든듯...!
 
