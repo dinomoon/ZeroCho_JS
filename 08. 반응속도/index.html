@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="app.js"></script>
+    <title>반응속도</title>
+    <style>
+        body {
+            width: 400px;
+            margin: 100px auto;
+        }
+        div {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            cursor: pointer;
+        }
+        div span.result {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            transform: translateX(-50%);
+            color: antiquewhite;
+            font-size: 30px;
+            font-weight: bold;
+            user-select: none;
+            white-space: nowrap;
+        }
+        div span.dir {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            user-select: none;
+            white-space: nowrap;
+        }
+        div span.opportunity {
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translateX(-50%);
+            color: antiquewhite;
+            font-size: 20px;
+            font-weight: bold;
+            user-select: none;
+            white-space: nowrap;
+        }
+        div.waiting {
+            background-color: dodgerblue;
+        }
+        div.ready {
+            background-color: orangered;
+        }
+        div.play {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen" class="waiting">
+        <span class="result"></span>
+        <span class="dir">클릭하면 시작합니다.</span>
+        <span class="opportunity">남은 횟수: 5번</span>
+    </div>
+</body>
+</html>
