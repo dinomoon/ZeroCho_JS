@@ -56,3 +56,4 @@
 2. eslint가 뭔지 궁금해서 검색을 했고, "ESLint는 ES + Lint입니다. ES는 EcmaScript, 즉 자바스크립트를 의미하는 것이고요. Lint는 보푸라기라는 뜻인데 프로그래밍 쪽에서는 에러가 있는 코드에 표시를 달아놓는 것을 의미합니다. 즉 ESLint는 자바스크립트 문법 중 에러가 있는 곳에 표시를 달아놓는 도구를 의미합니다."라고 한다.. ([제로초님 블로그](https://www.zerocho.com/category/JavaScript/post/583231719a87ec001834a0f2)에서..)
 3. 그럼 EcmaScript는 뭐지..? 궁금해서 또 검색해보니까 [재그지그님 블로그](https://wormwlrm.github.io/2018/10/03/What-is-the-difference-between-javascript-and-ecmascript.html)에 설명이 잘 되어있었다.
 4. 복습하다가 원래 학교에서 배울 때는 innerHTML로 내용을 넣었었는 데 제로초님은 textContent로 넣었다. 둘의 차이가 궁금해서 검색! innerHTML은 태그까지 읽거나 넣을 수 있는 것이고, textContent는 말 그대로 태그 안의 내용만 가져오거나 넣을 수 있다.
+5. 지뢰찾기 복습하다가 알게되었는데, 2차원배열에서 요소를 찾을 때, 행의 범위를 벗어나는 값을 넣으면 에러가 나지만 열의 범위를 벗어나는 값은 넣어도 에러가 나지 않고 undefined가 나옴. -> 그래서 주변의 지뢰를 찾을 때, if문과 concat을 사용해 주변 배열을 만들어서 찾을 수 있음.
