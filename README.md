@@ -13,6 +13,8 @@
 
 [07. 지뢰찾기](https://dinomoon.github.io/ZeroCho_JS/07.%20지뢰찾기/index2.html)
 
+[08. 반응속도](https://dinomoon.github.io/ZeroCho_JS/08.%20반응속도/index.html)
+
 ## 다른 사람이 만든 것들
 [배트맨 vs 슈퍼맨 / Android vs IOS 틱택토](https://exporter-hamster-17117.netlify.com/) 진짜 잘 만든듯...!
 
