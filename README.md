@@ -57,6 +57,45 @@ aroundArray.filter(function(v){return !!v;}).forEach(function(around){
   around.click();
 })
 ```
+#### 반응속도
+1. 시간측정의 3가지 방법
+  - new Date()로 현재 시간을 알아낸 뒤 차이를 구하기
+  - console.time("시간"), console.timeEnd("시간")사용하기 (주로 디버깅할 때 사용)
+  - performance.now()로 현재 시간을 알아낸 뒤 차이를 구하기 (new Date()보다 더 정밀하다.)
+2. 호출 스택(currentTime와 clickTime을 onclick 안에 쓰면 왜 결과가 제대로 안나오는지 잘 이해가 안된다..)
+```javascript
+window.addEventListener('load', function(){
+    var screen = document.querySelector("#screen");
+    var text = screen.querySelector('span');
+    
+    
+    screen.onclick = function(){
+        var currentTime;
+        var clickTime;
+        if(screen.classList.contains('waiting')){
+            screen.classList.remove('waiting')
+            screen.classList.add('ready');
+            text.textContent = '초록색이 나오면 클릭하세요.';
+            setTimeout(function(){
+                screen.click();
+                currentTime = new Date();
+            }, Math.random() * 1000 + 1000);
+        } else if(screen.classList.contains('ready')){
+            screen.classList.remove('ready')
+            screen.classList.add('play');
+            text.textContent = '클릭하세요!';
+        } else {
+            clickTime = new Date();
+            console.log(currentTime);
+            console.log(clickTime);
+            console.log((clickTime - currentTime)/1000);
+            screen.classList.remove('play')
+            screen.classList.add('waiting');
+            text.textContent = '클릭하면 시작합니다.';
+        }
+    }
+});
+```
 
 
 ## 개인 공부하며 알게 된 것
