@@ -96,6 +96,16 @@ window.addEventListener('load', function(){
     }
 });
 ```
+3. Maximum call stack exceeded 에러 해결방법
+```javascript
+function a(){
+  setTimeout(function(){
+    a();
+  }, 0)
+}
+
+a();
+```
 
 
 ## 개인 공부하며 알게 된 것
