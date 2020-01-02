@@ -49,6 +49,12 @@
 32. e.target vs e.currentTarget: target은 이벤트가 실제로 발생한 곳, currentTarget은 이벤트 리스너가 붙어있는 곳
 33. 스코프 간의 상하관계를 스코프체인이라고 부른다.
 34. e.currentTarget.textContent = 주변지뢰개수 || '' => 주변지뢰개수가 거짓(false, 0, '', null, undefined, NaN)이면 ''을 대신 써라(분기문을 하나 줄일 수 있다.)
+35. undefined나 null을 없애는 방법.
+```javascript
+aroundArray.filter(function(v){return !!v;}).forEach(function(around){
+  around.click();
+})
+```
 
 
 ## 개인 공부하며 알게 된 것
