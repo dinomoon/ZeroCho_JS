@@ -59,7 +59,7 @@ aroundArray.filter(function(v){return !!v;}).forEach(function(around){
   around.click();
 })
 ```
-#### 반응속도
+#### 08. 반응속도
 1. 시간측정의 3가지 방법
   - new Date()로 현재 시간을 알아낸 뒤 차이를 구하기
   - console.time("시간"), console.timeEnd("시간")사용하기 (주로 디버깅할 때 사용)
@@ -98,7 +98,7 @@ window.addEventListener('load', function(){
     }
 });
 ```
-3. Maximum call stack exceeded 에러 해결방법
+3. Maximum call stack exceeded 에러 해결방법(완변한 해결방법은 아님)
 ```javascript
 function a(){
   setTimeout(function(){
@@ -107,6 +107,23 @@ function a(){
 }
 
 a();
+```
+
+#### 09. 카드 뒤집기
+1. 클로저 해결방법
+```javascript
+function closer(c){
+  c.addEventListener('click', function(){
+    c.classList.toggle('flip');
+  });
+}
+closer(flipCard);
+
+(function(c){
+    c.addEventListener('click', function(){
+        c.classList.toggle('flip');
+    });
+})(flipCard);
 ```
 
 
