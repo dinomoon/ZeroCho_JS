@@ -129,7 +129,31 @@ closer(flipCard);
   - 문자, 불리언, 숫자는 기본적으로 복사(깊은 복사)가 되고, 객체들(객체, 배열, 함수)은 참조(얕은 복사)가 된다.
 ```javascript
 //깊은 복사하는 방법
+//1단계까지만 깊은 복사하는 방법
+list2 = list.slice();
+obj2 = {}
+Object.keys(obj).forEach(function(key){
+  obj2[key] = obj[key];
+})
+//끝까지 깊은 복사하는 방법(근데 성능 최악이라 되도록 안쓰는 게 좋다고 함)
 복사 객체 = JSON.parse(JSON.stringify(원래 객체))
+```
+3. 팩토리 패턴과 프로토타입
+```javascript
+var prototype = {
+    type: 'card',
+    attack: function(){console.log("공격")},
+    defend: function(){},
+};
+function cardFactory(name, att, hp){
+    var card = {
+        name: name,
+        att: att,
+        hp: hp,
+    }
+    card.__proto__ = prototype
+    return card;
+}
 ```
 
 
