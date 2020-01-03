@@ -131,6 +131,7 @@ closer(flipCard);
 //깊은 복사하는 방법
 //1단계까지만 깊은 복사하는 방법
 list2 = list.slice();
+Object.assign(obj2, obj);
 obj2 = {}
 Object.keys(obj).forEach(function(key){
   obj2[key] = obj[key];
@@ -146,15 +147,14 @@ var prototype = {
     defend: function(){},
 };
 function cardFactory(name, att, hp){
-    var card = {
-        name: name,
-        att: att,
-        hp: hp,
-    }
-    card.__proto__ = prototype
+    var card = Object.create(prototype);
+    card.name = name;
+    card.att = att;
+    card.hp = hp;
     return card;
 }
 ```
+4. 프로토타입을 쓰는 이유? 모든 객체의 값들을 한 방에 수정, 삭제, 추가가 가능하니까!
 
 
 ## 개인 공부하며 알게 된 것
