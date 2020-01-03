@@ -178,7 +178,7 @@ function 함수(매개변수){
 var 인자 = {a:2};
 함수(인자);
 console.log(인자);
-//{a:8
+//{a:8}
 //{a:8}
 
 function 함수(매개변수){
