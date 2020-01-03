@@ -131,12 +131,14 @@ closer(flipCard);
 //깊은 복사하는 방법
 //1단계까지만 깊은 복사하는 방법
 list2 = list.slice();
-Object.assign(obj2, obj);
+
+Object.assign(obj2, obj); //obj2 = Object.assign({}, obj); 도 가능
+
 obj2 = {}
 Object.keys(obj).forEach(function(key){
   obj2[key] = obj[key];
 })
-//끝까지 깊은 복사하는 방법(근데 성능 최악이라 되도록 안쓰는 게 좋다고 함)
+//끝까지 깊은 복사하는 방법(근데 성능 최악이라 되도록 안쓰는 게 좋다고 함, 프로토타입은 복사X)
 복사 객체 = JSON.parse(JSON.stringify(원래 객체))
 ```
 3. 팩토리 패턴과 프로토타입
@@ -153,9 +155,42 @@ function cardFactory(name, att, hp){
     card.hp = hp;
     return card;
 }
+var aaa = cardFactory('aaa',10,20);
+
+//객체 지향으로 짤 때(생성자 함수)
+function Card(name, att, hp){
+  this.name = name;
+  this.att = att;
+  this.hp = hp;
+}
+Card.prototype = prototype
+var bbb = new Card('bbb',10,20);
 ```
 4. 프로토타입을 쓰는 이유? 모든 객체의 값들을 한 방에 수정, 삭제, 추가가 가능하니까!
+5. call by value, call by reference, call by sharing(12-1강)
+  - 객체를 참조하는 것이 call by reference가 아니다. 자바스크립트에는 call by reference가 없다!
+  - call by reference가 아닌 이유: 객체의 속성을 수정할 때는 참조이지만, 객체 자체를 수정할 때는 참조관계가 아니다.
+```javascript
+function 함수(매개변수){
+  매개변수.a = 8;
+  console.log(매개변수);
+}
+var 인자 = {a:2};
+함수(인자);
+console.log(인자);
+//{a:8
+//{a:8}
 
+function 함수(매개변수){
+  매개변수 = 8;
+  console.log(매개변수);
+}
+var 인자 = {a:2};
+함수(인자);
+console.log(인자);
+//8
+//{a:2}
+```
 
 ## 개인 공부하며 알게 된 것
 1. 브라켓에서 자바스크립트를 작성할 때 이상하게 왼쪽에 계속 X표시가 뜨면서 (작동은 잘 되지만..)document is not undefined라고 하길래 거슬려서 검색해봤는데 맨 위에 /*eslint-env browser*/를 추가해주면 된다고 해서 해보니까 되었다. (이유는 모르겠다..)
