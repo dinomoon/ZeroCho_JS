@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="app2.js"></script>
+    <title>자스스톤</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            user-select: none;
+        }
+        p {margin: 10px;}
+        .card {
+            display: inline-block;
+            width: 80px;
+            height: 100px;
+            border: 1px solid;
+            position: relative;
+            margin: 10px;
+            vertical-align: top;
+        }
+        .card-attack, .card-hp, .card-cost {
+            display: block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            position: absolute;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            bottom: 0;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .card-attack { left: 0; background-color: dodgerblue;}
+        .card-hp { right: 0; background-color: orange;}
+        .card-cost {left: 0; top: 0; bottom: initial; background-color: yellow;}
+        .enemy-hero .card-hp, .my-hero .card-hp {background-color: orangered; color: white;}
+    </style>
+</head>
+<body>
+    <template>
+        <div class="card">
+            <span class="card-cost"></span>
+            <span class="card-attack"></span>
+            <span class="card-hp"></span>
+        </div>
+    </template>
+    <div class="wrapper">
+        <div class="hero-wrapper">
+            <div class="enemy-deck">
+                <p>상대방 덱</p>
+            </div>
+            <hr>
+            <div class="enemy-field">
+                <div class="enemy-hero">
+                    <div class="card">
+                        <span>영웅</span>
+                        <span class="card-attack">1</span>
+                        <span class="card-hp">30</span>
+                    </div>
+                    <p class="cost">남은 코스트: 10</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="hero-wrapper">
+            <div class="my-field">
+            </div>
+            <div class="my-hero">
+                <p class="cost">남은 코스트: 10</p>
+                <div class="card">
+                    <span>영웅</span>
+                    <span class="card-attack">1</span>
+                    <span class="card-hp">30</span>
+                </div>
+            </div>
+            <hr>
+            <div class="my-deck">
+                <p>내 덱</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
