@@ -100,7 +100,7 @@ window.addEventListener('load', function(){
     }
 });
 ```
-3. Maximum call stack exceeded 에러 해결방법(완변한 해결방법은 아님)
+3. Maximum call stack exceeded 에러 해결방법(완벽한 해결방법은 아님)
 ```javascript
 function a(){
   setTimeout(function(){
