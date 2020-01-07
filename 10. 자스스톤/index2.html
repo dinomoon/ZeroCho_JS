@@ -12,8 +12,10 @@
             margin: 0;
             user-select: none;
         }
-        p {margin: 10px;}
+        p {margin: 0px;}
+        hr {margin: 0;}
         .card {
+            cursor: pointer;
             display: inline-block;
             width: 80px;
             height: 100px;
@@ -21,6 +23,13 @@
             position: relative;
             margin: 10px;
             vertical-align: top;
+            box-sizing: border-box;
+        }
+        .card:hover {
+            background-color: #ddd;
+        }
+        .card.turn-over:hover {
+            background-color: #333;
         }
         .card-attack, .card-hp, .card-cost {
             display: block;
@@ -38,6 +47,14 @@
         .card-hp { right: 0; background-color: orange;}
         .card-cost {left: 0; top: 0; bottom: initial; background-color: yellow;}
         .enemy-hero .card-hp, .my-hero .card-hp {background-color: orangered; color: white;}
+
+        .selected {border: 2px solid orange;}
+        .turn-over {background-color: #333; border: none; cursor:default;}
+        .wrapper {position: relative;}
+        .turn-btn {cursor: pointer; color: white; background-color: #999; padding: 10px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+        .turn-btn:hover {background-color: orange; color: white;}
+        .enemy-field {height: 120px;}
+        .my-field {height: 120px;}
     </style>
 </head>
 <body>
@@ -49,39 +66,45 @@
         </div>
     </template>
     <div class="wrapper">
-        <div class="hero-wrapper">
-            <div class="enemy-deck">
-                <p>상대방 덱</p>
-            </div>
+        <div class="enemy-deck">
+            <p>상대방 덱</p>
+        </div>
+        <div class="field">
             <hr>
-            <div class="enemy-field">
+            <div class="enemy-field-wrapper">
                 <div class="enemy-hero">
-                    <div class="card">
+                    <!-- <div class="card">
                         <span>영웅</span>
                         <span class="card-attack">1</span>
                         <span class="card-hp">30</span>
-                    </div>
-                    <p class="cost">남은 코스트: 10</p>
+                    </div> -->
+                    <p><span>남은 코스트: </span><span class="cost">10</span></p>
                 </div>
-            </div>
-        </div>
-        <hr>
-        <div class="hero-wrapper">
-            <div class="my-field">
-            </div>
-            <div class="my-hero">
-                <p class="cost">남은 코스트: 10</p>
-                <div class="card">
-                    <span>영웅</span>
-                    <span class="card-attack">1</span>
-                    <span class="card-hp">30</span>
+                <div class="enemy-field">
+                    
                 </div>
             </div>
             <hr>
-            <div class="my-deck">
-                <p>내 덱</p>
+            <span class="turn-btn">턴 넘기기</span>
+            <div class="my-field-wrapper">
+                <div class="my-field">
+
+                </div>
+                <div class="my-hero">
+                    <p><span>남은 코스트: </span><span class="cost">10</span></p>
+                    <!-- <div class="card">
+                        <span>영웅</span>
+                        <span class="card-attack">1</span>
+                        <span class="card-hp">30</span>
+                    </div> -->
+                </div>
             </div>
+            <hr>
         </div>
+        <div class="my-deck">
+            
+        </div>
+        <p>내 덱</p>
     </div>
 </body>
 </html>
