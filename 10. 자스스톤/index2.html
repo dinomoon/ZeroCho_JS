@@ -55,6 +55,7 @@
         .turn-btn:hover {background-color: orange; color: white;}
         .enemy-field {height: 120px;}
         .my-field {height: 120px;}
+        .turn {background-color: antiquewhite;}
     </style>
 </head>
 <body>
@@ -66,37 +67,31 @@
         </div>
     </template>
     <div class="wrapper">
+        <p>상대방 덱</p>
         <div class="enemy-deck">
-            <p>상대방 덱</p>
+            
         </div>
         <div class="field">
             <hr>
             <div class="enemy-field-wrapper">
                 <div class="enemy-hero">
-                    <!-- <div class="card">
-                        <span>영웅</span>
-                        <span class="card-attack">1</span>
-                        <span class="card-hp">30</span>
-                    </div> -->
-                    <p><span>남은 코스트: </span><span class="cost">10</span></p>
+                    
                 </div>
+                <p><span>남은 코스트: </span><span class="cost">10</span></p>
                 <div class="enemy-field">
                     
                 </div>
             </div>
             <hr>
             <span class="turn-btn">턴 넘기기</span>
-            <div class="my-field-wrapper">
+            <div class="my-field-wrapper turn">
                 <div class="my-field">
 
+
                 </div>
+                <p><span>남은 코스트: </span><span class="cost">10</span></p>
                 <div class="my-hero">
-                    <p><span>남은 코스트: </span><span class="cost">10</span></p>
-                    <!-- <div class="card">
-                        <span>영웅</span>
-                        <span class="card-attack">1</span>
-                        <span class="card-hp">30</span>
-                    </div> -->
+                    
                 </div>
             </div>
             <hr>
