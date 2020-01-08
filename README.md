@@ -17,6 +17,8 @@
 
 [09. 카드뒤집기](https://dinomoon.github.io/ZeroCho_JS/09.%20카드%20뒤집기/index.html)
 
+[10. 자스스톤](https://dinomoon.github.io/ZeroCho_JS/10.%20자스스톤/index2.html)
+
 ## 다른 사람이 만든 것들
 [배트맨 vs 슈퍼맨 / Android vs IOS 틱택토](https://exporter-hamster-17117.netlify.com/) 진짜 잘 만든듯...!
 
